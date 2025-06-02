@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>کاتالوگ کافه</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>کاتالوگ منو</h1>
+
+    <div class="menu">
+      <div class="item">
+        <h3>قهوه ترک</h3>
+        <p>25000 تومان</p>
+        <button onclick="addToCart('قهوه ترک', 25000)">افزودن</button>
+      </div>
+      <div class="item">
+        <h3>لاته</h3>
+        <p>35000 تومان</p>
+        <button onclick="addToCart('لاته', 35000)">افزودن</button>
+      </div>
+      <div class="item">
+        <h3>کیک شکلاتی</h3>
+        <p>40000 تومان</p>
+        <button onclick="addToCart('کیک شکلاتی', 40000)">افزودن</button>
+      </div>
+    </div>
+
+    <h2>🛒 سبد خرید</h2>
+    <ul id="cart"></ul>
+    <p>مبلغ کل: <span id="total">0</span> تومان</p>
+    <button onclick="sendOrder()">ارسال سفارش</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
