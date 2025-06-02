@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کاتالوگ کافه</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-image: url('jgooho.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .item {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    .item button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background: #ff8800;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #cart {
+      margin-top: 30px;
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    #send-email {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>منوی کافه</h1>
+  <div class="menu">
+    <div class="item">
+      <h3>قهوه ترک</h3>
+      <p>قیمت: 25000 تومان</p>
+      <button onclick="addToCart('قهوه ترک', 25000)">افزودن به سبد</button>
+    </div>
+    <div class="item">
+      <h3>کیک شکلاتی</h3>
+      <p>قیمت: 30000 تومان</p>
+      <button onclick="addToCart('کیک شکلاتی', 30000)">افزودن به سبد</button>
+    </div>
+    <div class="item">
+      <h3>لاته</h3>
+      <p>قیمت: 35000 تومان</p>
+      <button onclick="addToCart('لاته', 35000)">افزودن به سبد</button>
+    </div>
+  </div>
+
+  <div id="cart">
+    <h2>سبد خرید</h2>
+    <ul id="cart-items"></ul>
+    <p id="total">مجموع: 0 تومان</p>
+    <button id="send-email">ارسال سفارش به ایمیل کافه‌دار</button>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const list = document.getElementById('cart-items');
+      list.innerHTML = '';
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price.toLocaleString()} تومان`;
+        list.appendChild(li);
+      });
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      document.getElementById('total').textContent = `مجموع: ${total.toLocaleString()} تومان`;
+    }
+
+    function sendOrderByEmail() {
+      if (cart.length === 0) {
+        alert("سبد خرید شما خالی است.");
+        return;
+      }
+
+      let orderCode = "CF" + Math.floor(Math.random() * 1000000);
+      let subject = `سفارش جدید - کد ${orderCode}`;
+      let message = `سفارش جدید با کد: ${orderCode}\n\n`;
+      cart.forEach(item => {
+        message += `${item.name} - ${item.price.toLocaleString()} تومان\n`;
+      });
+      let total = cart.reduce((acc, item) => acc + item.price, 0);
+      message += `\nمجموع: ${total.toLocaleString()} تومان`;
+
+      let email = "sshabanloo79@gmail.com";
+      let mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+      window.location.href = mailtoLink;
+    }
+
+    document.getElementById('send-email').addEventListener('click', sendOrderByEmail);
+  </script>
+</body>
+</html>

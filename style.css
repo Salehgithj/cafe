@@ -1,0 +1,202 @@
+/* تنظیمات کلی و بک‌گراند */
+body {
+  font-family: "Tahoma", sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+
+  background-image: url('jgooho.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* هدر سایت */
+header {
+  background-color: rgba(139, 0, 0, 0.85);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+/* محتوای اصلی */
+main {
+  max-width: 700px;
+  margin: 20px auto 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+
+/* بخش منو */
+.menu-section {
+  margin-bottom: 35px;
+}
+
+.menu-section h2 {
+  color: #8b0000;
+  border-bottom: 3px solid #8b0000;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+/* لیست آیتم‌ها */
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* هر آیتم منو */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 12px 18px;
+  color: #333;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.item:hover {
+  background-color: #e4e4e4;
+}
+
+/* اسم و قیمت */
+.item span:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.item span:last-child {
+  font-weight: 700;
+  color: #8b0000;
+  font-size: 1.05rem;
+}
+
+/* دکمه افزودن به سبد */
+button.add-to-cart {
+  background-color: #8b0000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(139, 0, 0, 0.5);
+  transition: background-color 0.25s ease;
+}
+
+button.add-to-cart:hover {
+  background-color: #a52a2a;
+}
+
+/* بخش سبد خرید */
+#cart-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  color: #333;
+}
+
+/* عنوان سبد خرید */
+#cart-section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #8b0000;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+/* لیست سبد خرید */
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+/* هر آیتم سبد خرید */
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+}
+
+/* دکمه حذف هر آیتم */
+#cart-items li button {
+  background-color: #cc0000;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+#cart-items li button:hover {
+  background-color: #ff0000;
+}
+
+/* مجموع مبلغ */
+#total-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: left;
+  color: #8b0000;
+}
+
+/* فوتر */
+footer {
+  background-color: rgba(139, 0, 0, 0.85);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-weight: 600;
+  text-shadow: none;
+  font-size: 1rem;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 480px) {
+  main {
+    margin: 15px 10px 30px;
+    padding: 20px 15px;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  button.add-to-cart {
+    align-self: flex-end;
+  }
+
+  #cart-items li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
