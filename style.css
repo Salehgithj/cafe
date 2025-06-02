@@ -1,0 +1,37 @@
+body {
+  font-family: sans-serif;
+  background: url('jgooho.jpg') no-repeat center center fixed;
+  background-size: cover;
+  direction: rtl;
+  color: white;
+  padding: 20px;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.menu .item {
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #00c896;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #009e74;
+}
