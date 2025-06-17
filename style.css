@@ -1,0 +1,254 @@
+body {
+  font-family: sans-serif;
+  /* کد مربوط به تصویر پس‌زمینه در اینجا قرار دارد */
+  background: url('jgooho.jpg') no-repeat center center fixed; /* <--- این خط کد عکس بکگراند است */
+  background-size: cover;
+  direction: rtl;
+  color: white;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.menu-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.menu-box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: 8px 0; 
+  flex-wrap: nowrap; 
+}
+
+.item span:first-child { 
+  flex-grow: 1; 
+  margin-left: 8px; 
+}
+
+.size-selector {
+  display: flex;
+  border: 1px solid #ffd700; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  margin: 0 8px; 
+  flex-shrink: 0;
+}
+
+.size-selector input[type="radio"] {
+  display: none; 
+}
+
+.size-selector label {
+  padding: 5px 10px; 
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2); 
+  color: #f0f0f0; 
+  font-size: 0.8rem; 
+  text-align: center;
+  flex-grow: 1; 
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; 
+  user-select: none; 
+}
+
+.size-selector label:not(:first-child) { 
+   border-right: 1px solid #ffd700; 
+}
+
+.size-selector input[type="radio"]:checked + label {
+  background-color: #ffd700; 
+  color: #333; 
+  font-weight: bold;
+}
+
+.size-selector label:hover {
+  background-color: #b89d00; 
+  color: #fff;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  margin: 0 8px; 
+  font-size: 0.8em; 
+  line-height: 1.4; 
+  text-align: right; 
+  flex-shrink: 0; 
+}
+
+.price-info span {
+  white-space: nowrap; 
+  color: #f0f0f0; 
+}
+
+
+button {
+  background-color: #00c896;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  white-space: nowrap; 
+  flex-shrink: 0;
+  margin-right: 5px; 
+}
+
+button:hover {
+  background-color: #009e74;
+}
+
+.order-type-selection {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.order-type-selection h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #ffd700; 
+}
+
+.order-type-selection label {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.order-type-selection input[type="radio"] {
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.message {
+  margin-top: 15px;
+  padding: 10px 15px; 
+  border-radius: 8px;
+  width: auto; 
+  max-width: 100%; 
+  box-sizing: border-box; 
+  text-align: right; 
+}
+.message.info { 
+  background-color: #17a2b8; 
+  color: white;
+}
+.success { 
+  background-color: #28a745; 
+  color: white; 
+}
+.error { 
+  background-color: #dc3545;
+  color: white;
+}
+
+#orderConfirmation {
+  text-align: right; 
+  padding: 20px;
+}
+
+#orderConfirmation h2 {
+  color: #fff; 
+  margin-bottom: 15px;
+}
+
+#orderConfirmation p {
+  margin: 8px 0;
+  font-size: 1.1rem; 
+}
+#orderConfirmation strong{
+    color: #ffd700; 
+}
+
+#orderConfirmation h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #ffd700; 
+}
+
+#orderConfirmation ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+#orderConfirmation ul li {
+  padding: 5px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+#orderConfirmation ul li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) { 
+  .grid {
+    grid-template-columns: 1fr; 
+  }
+  /* .item { flex-wrap: wrap; } // ممکن است برای نمایش بهتر نیاز باشد */
+}
+
+@media (max-width: 480px) { 
+  .item {
+    flex-wrap: wrap; 
+  }
+  .item span:first-child { 
+    flex-basis: 100%; 
+    margin-bottom: 8px; 
+    margin-left: 0;
+  }
+  .item .size-selector {
+    flex-basis: 100%; 
+    margin-bottom: 8px;
+    margin-left:0;
+    margin-right:0;
+    justify-content: center; 
+  }
+  .item .size-selector label {
+      padding: 8px 10px; 
+  }
+  .item .price-info {
+    flex-basis: calc(100% - 90px); 
+    margin-bottom: 8px;
+    margin-left: 0;
+    margin-right: auto; 
+    align-items: flex-start; 
+    font-size: 0.75em;
+  }
+  .item .price-info span {
+      padding: 1px 0;
+  }
+  .item button { 
+    flex-basis: 80px; 
+    margin-top: 5px; 
+    margin-right: 0;
+    padding: 8px 5px; 
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
