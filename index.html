@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کاتالوگ کافه</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>کاتالوگ منو</h1>
+
+    <div class="grid">
+      <div class="menu-box">
+        <h2>☕ قهوه</h2>
+        <div class="item"><span>ترک</span><span>30000</span><button onclick="addToCart('ترک', 30000)">افزودن</button></div>
+        <div class="item"><span>لاته</span><span>50000</span><button onclick="addToCart('لاته', 50000)">افزودن</button></div>
+        <div class="item"><span>موکا</span><span>40000</span><button onclick="addToCart('موکا', 40000)">افزودن</button></div>
+        <div class="item"><span>فرانسه</span><span>40000</span><button onclick="addToCart('فرانسه', 40000)">افزودن</button></div>
+        <div class="item"><span>کاپوچینو</span><span>40000</span><button onclick="addToCart('کاپوچینو', 40000)">افزودن</button></div>
+        <div class="item"><span>هات چاکلت</span><span>40000</span><button onclick="addToCart('هات چاکلت', 40000)">افزودن</button></div>
+      </div>
+      <div class="menu-box">
+        <h2>🍵 چای</h2>
+        <div class="item"><span>چای ساده</span><span>30000</span><button onclick="addToCart('چای ساده', 30000)">افزودن</button></div>
+        <div class="item"><span>چای سبز</span><span>40000</span><button onclick="addToCart('چای سبز', 40000)">افزودن</button></div>
+        <div class="item"><span>چای ماسالا</span><span>50000</span><button onclick="addToCart('چای ماسالا', 50000)">افزودن</button></div>
+        <div class="item"><span>چای زعفران</span><span>50000</span><button onclick="addToCart('چای زعفران', 50000)">افزودن</button></div>
+      </div>
+
+      <div class="menu-box">
+        <h2>🍰 کیک</h2>
+        <div class="item">
+          <span>کیک هویج</span>
+          <div class="size-selector" id="cake-carrot-selector">
+            <input type="radio" id="size-carrot-normal" name="cake_carrot_size" value="نرمال" checked>
+            <label for="size-carrot-normal">نرمال</label>
+            <input type="radio" id="size-carrot-mini" name="cake_carrot_size" value="مینی">
+            <label for="size-carrot-mini">مینی</label>
+          </div>
+          <div class="price-info">
+            <span>نرمال: ۵۰۰۰۰ تومان</span>
+            <span>مینی: ۳۵۰۰۰ تومان</span>
+          </div>
+          <button onclick="addCakeWithOptions('کیک هویج', 50000, 'cake-carrot-selector')">افزودن</button>
+        </div>
+        <div class="item">
+          <span>کیک گردو</span>
+          <div class="size-selector" id="cake-walnut-selector">
+            <input type="radio" id="size-walnut-normal" name="cake_walnut_size" value="نرمال" checked>
+            <label for="size-walnut-normal">نرمال</label>
+            <input type="radio" id="size-walnut-mini" name="cake_walnut_size" value="مینی">
+            <label for="size-walnut-mini">مینی</label>
+          </div>
+          <div class="price-info">
+            <span>نرمال: ۴۰۰۰۰ تومان</span>
+            <span>مینی: ۲۸۰۰۰ تومان</span>
+          </div>
+          <button onclick="addCakeWithOptions('کیک گردو', 40000, 'cake-walnut-selector')">افزودن</button>
+        </div>
+        <div class="item">
+          <span>کیک شکلات</span>
+          <div class="size-selector" id="cake-chocolate-selector">
+            <input type="radio" id="size-chocolate-normal" name="cake_chocolate_size" value="نرمال" checked>
+            <label for="size-chocolate-normal">نرمال</label>
+            <input type="radio" id="size-chocolate-mini" name="cake_chocolate_size" value="مینی">
+            <label for="size-chocolate-mini">مینی</label>
+          </div>
+          <div class="price-info">
+            <span>نرمال: ۴۵۰۰۰ تومان</span>
+            <span>مینی: ۳۱۵۰۰ تومان</span>
+          </div>
+          <button onclick="addCakeWithOptions('کیک شکلات', 45000, 'cake-chocolate-selector')">افزودن</button>
+        </div>
+        <div class="item">
+          <span>کیک سیب</span>
+          <div class="size-selector" id="cake-apple-selector">
+            <input type="radio" id="size-apple-normal" name="cake_apple_size" value="نرمال" checked>
+            <label for="size-apple-normal">نرمال</label>
+            <input type="radio" id="size-apple-mini" name="cake_apple_size" value="مینی">
+            <label for="size-apple-mini">مینی</label>
+          </div>
+          <div class="price-info">
+            <span>نرمال: ۴۵۰۰۰ تومان</span>
+            <span>مینی: ۳۱۵۰۰ تومان</span>
+          </div>
+          <button onclick="addCakeWithOptions('کیک سیب', 45000, 'cake-apple-selector')">افزودن</button>
+        </div>
+        <div class="item">
+          <span>چیزکیک</span>
+          <div class="size-selector" id="cake-cheesecake-selector">
+            <input type="radio" id="size-cheesecake-normal" name="cake_cheesecake_size" value="نرمال" checked>
+            <label for="size-cheesecake-normal">نرمال</label>
+            <input type="radio" id="size-cheesecake-mini" name="cake_cheesecake_size" value="مینی">
+            <label for="size-cheesecake-mini">مینی</label>
+          </div>
+          <div class="price-info">
+            <span>نرمال: ۵۵۰۰۰ تومان</span>
+            <span>مینی: ۳۸۵۰۰ تومان</span>
+          </div>
+          <button onclick="addCakeWithOptions('چیزکیک', 55000, 'cake-cheesecake-selector')">افزودن</button>
+        </div>
+      </div>
+      <div class="menu-box">
+        <h2>🥤 شیک</h2>
+        <div class="item"><span>شیک وانیلی</span><span>45000</span><button onclick="addToCart('شیک وانیلی', 45000)">افزودن</button></div>
+        <div class="item"><span>شیک موز</span><span>45000</span><button onclick="addToCart('شیک موز', 45000)">افزودن</button></div>
+        <div class="item"><span>شیک شکلات</span><span>55000</span><button onclick="addToCart('شیک شکلات', 55000)">افزودن</button></div>
+        <div class="item"><span>شیک شاتوت</span><span>50000</span><button onclick="addToCart('شیک شاتوت', 50000)">افزودن</button></div>
+      </div>
+    </div>
+
+    <div class="order-type-selection">
+      <h3>نوع سفارش:</h3>
+      <label><input type="radio" name="orderType" value="داخل سالن" checked onchange="handleOrderTypeChange(this.value)"> داخل سالن</label>
+      <label><input type="radio" name="orderType" value="بیرون‌بر" onchange="handleOrderTypeChange(this.value)"> بیرون‌بر</label>
+    </div>
+
+    <div id="tableNumberInputContainer" style="margin-top: 15px; margin-bottom: 15px; text-align: center;">
+      <label for="tableNumber" style="margin-left: 5px;">شماره میز:</label>
+      <input type="number" id="tableNumber" min="1" max="10" style="padding: 5px; border-radius: 5px; border: 1px solid #ccc; width: 60px;">
+    </div>
+
+    <h2>🛒 سبد خرید</h2>
+    <ul id="cart"></ul>
+    <p>مبلغ کل: <span id="total">0</span> تومان</p>
+    <button onclick="sendOrder()">ارسال سفارش</button>
+    
+    <div id="message" class="message" style="display: none;"></div>
+
+    <div id="orderConfirmation" class="message success" style="display: none;">
+      <h2>✅ سفارش شما با موفقیت ثبت شد!</h2>
+      <p>شماره پیگیری سفارش: <strong id="trackingNumber"></strong></p>
+      <h3>جزئیات سفارش:</h3>
+      <ul id="confirmationCartItems"></ul>
+      <p>نوع سفارش: <strong id="confirmationOrderType"></strong></p>
+      <p id="confirmationTableNumberLine" style="display:none;">شماره میز: <strong id="confirmationTableNumber"></strong></p>
+      <p>زمان تحویل: <strong id="confirmationPrepTime"></strong></p>
+      <p>مبلغ کل: <strong id="confirmationTotal"></strong> تومان</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
